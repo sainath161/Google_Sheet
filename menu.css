@@ -1,0 +1,26 @@
+#menu{
+   
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #options{
+    display: flex;
+    gap: 30px;
+} */
+
+.active-option{
+    background-color: #D1D8E0;
+}
+
+#menu > div {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#menu > div:hover {
+    background-color: lightslategray;
+}

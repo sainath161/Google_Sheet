@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags for character set and viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel</title>
+
+  <!-- Link to the favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="./Google_Sheets_Logo.svg">
+
+  <!-- External stylesheet links for styling -->
+  <link rel="stylesheet" href="google.css">
+  <link rel="stylesheet" href="menu.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Main header section -->
+  <div id="main_header">
+    <div id="tool" style="width: 100%; margin: auto;">
+      <!-- File Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">File</button>
+        <div class="dropdown-content">
+          <a href="#">New</a>
+          <a href="#">Open</a>
+          <a href="#">Save</a>
+          <a href="#">Save As</a>
+        </div>
+      </div>
+
+      <!-- Home Dropdown -->
+      <div class="dropdown active">
+        <button class="dropbtn">Home</button>
+      </div>
+
+      <!-- Insert Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Insert</button>
+        <div class="dropdown-content">
+          <a href="#">Insert Row</a>
+          <a href="#">Insert Column</a>
+          <a href="#">Insert Image</a>
+        </div>
+      </div>
+
+      <!-- Layout Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Layout</button>
+        <div class="dropdown-content">
+          <a href="#">Format Cells</a>
+          <a href="#">Merge Cells</a>
+          <a href="#">Cell Borders</a>
+        </div>
+      </div>
+
+      <!-- Help Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Help</button>
+        <div class="dropdown-content">
+          <a href="#">About</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Options section for cut, copy, paste, and formatting options -->
+    <div id="options" style="width: 100%; margin: auto;">
+      <div id="menu">
+        <!-- Cut, Copy, Paste buttons -->
+        <div class="material-icons" id="cut" onclick="cutText()">content_cut</div>
+        <div class="material-icons content_copy" id="copy" onclick="copyText()">content_copy</div>
+        <div class="material-icons" id="paste" onclick="pasteText()">content_paste</div>
+
+        <!-- Formatting options: Bold, Italic, Underline, Text Align, Text Color, Background Color, Font Size, Font Family -->
+        <div id="bold" onclick="onClickBold(this)">B</div>
+        <div id="italic" onclick="onClickItalic(this)">I</div>
+        <div id="underline" onclick="onUnderLine(this)">U</div>
+        <div class="material-icons active-option text_align" onclick="textAlign(this)" data-value="start">
+          format_align_left
+        </div>
+        <div class="material-icons text_align" onclick="textAlign(this)" data-value="center">
+          format_align_center
+        </div>
+        <div class="material-icons text_align" onclick="textAlign(this)" data-value="right">
+          format_align_right
+        </div>
+        <div id="text-color">
+          <label for="textColor"><span class="material-icons">
+              border_color
+            </span></label>
+          <input onchange="onchangeTextColor(this)" type="color" id="textColor" style="width : 0px ; height : 0">
+        </div>
+        <div id="bg-color">
+          <label for="bgColor"><span class="material-icons">
+              format_color_fill
+            </span></label>
+          <input onchange="onchangeBackGroundColor(this)" type="color" id="bgColor" style="width : 0px ; height : 0">
+        </div>
+        <div id="font-size">
+          <select id="font-size-select" onchange="onChangeFontSize(this)">
+            <!-- Font size options -->
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+            <option value="24">24</option>
+            <option value="28">28</option>
+            <option value="32">32</option>
+            <option value="36">36</option>
+            <option value="38">40</option>
+            <option value="40">40</option>
+            <option value="42">42</option>
+            <option value="44">44</option>
+            <option value="46">46</option>
+            <option value="48">48</option>
+            <option value="50">50</option>
+            <option value="52">52</option>
+            <option value="54">54</option>
+            <option value="56">56</option>
+            <option value="60">60</option>
+            <option value="64">64</option>
+            <option value="72">72</option>
+            <option value="76">76</option>
+            <option value="80">80</option>
+            <option value="84">84</option>
+            <option value="90">90</option>
+            <option value="96">96</option>
+            <!-- Add more options with different font sizes as needed -->
+          </select>
+        </div>
+        <div id="font-family">
+          <select id="font-family-select" onchange="onChangeFontFamily(this)">
+            <option class="font-option" value="sans-serif" selected>
+              Sans-serif
+            </option>
+            <option class="font-option" value="serif">Serif</option>
+            <option class="font-option" value="monospace">Monospace</option>
+            <option class="font-option" value="cursive">Cursive</option>
+            <option class="font-option" value="fantasy">Fantasy</option>
+            <option class="font-option" value="Lucida Console">
+              Lucida Console
+            </option>
+            <option class="font-option" value="Tahoma">Tahoma</option>
+            <option class="font-option" value="Verdana">Verdana</option>
+            <option class="font-option" value="Impact">Impact</option>
+            <option class="font-option" value="Trebuchet MS">
+              Trebuchet MS
+            </option>
+            <option class="font-option" value="Palatino">Palatino</option>
+            <option class="font-option" value="Garamond">Garamond</option>
+            <option class="font-option" value="Comic Sans MS">
+              Comic Sans MS
+            </option>
+            <option class="font-option" value="Brush Script MT">
+              Brush Script MT
+            </option>
+            <!-- Add more options with different font families as needed -->
+          </select>
+        </div>
+      </div>
+      <span id="active-cell">null</span>
+    </div>
+  </div>
+
+  <!-- Main content area with a sticky header and a scrollable body -->
+  <main style="width: 98.93vw; margin: auto; height: 83.91vh; overflow: scroll">
+    <div id="header">
+      <b style="position: sticky; left: 0; top: 0; background-color: white">
+        SI. No</b>
+    </div>
+    <section id="body"></section>
+  </main>
+
+  <!-- Script tags for including JavaScript files -->
+  <script src="option.js"></script>
+  <script src="google.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#header{
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: fit-content;
+    z-index: 100;
+    background-color: #fff
+}
+
+#header > b {
+    padding: 10px 0px;
+    text-align: center;
+    min-width: 100px;
+    border: 1px solid #dfe4e9;
+
+ 
+}
+.row {
+    display: flex;
+}
+.row > b,
+.row > div {
+    padding: 10px 0;
+    min-width: 100px;
+    border: 1px solid #dfe4e9; 
+}
+  
+.row > b:first-child ,
+#header > b:first-child
+{
+    text-align: center;
+    position: sticky;
+    left:0;
+    top: 0;
+    background-color:#fff;
+    border: 1px solid #dfe4e9;
+    min-width: 50px;
+
+}
+
+#options {
+    padding: 10px;
+    background-color: #ecf0f1;
+   
+}
+  
+#active-cell {
+    background-color: white;
+    padding: 2px 20px;
+
+}
+
+
+
+#tool {
+  background-color: aquamarine;
+  height: 6vh;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 101;
+}
+
+/* Dropdown button styling */
+.dropbtn {
+  margin-top: 21px;
+  background-color: transparent;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Active button styling */
+.active .dropbtn {
+  background-color: #ecf0f1;
+}
+
+/* Set the background color to "aqua" */
+.dropdown:hover .dropbtn {
+  background-color: aqua;
+}
+
+/* Set the hover and active colors to "#ecf0f1" */
+.dropdown:hover .dropbtn,
+.dropdown-content a:hover {
+  background-color: #ecf0f1;
+  color: black;
+  height: fit-content;
+}
+
+/* Dropdown content container */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Dropdown items */
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
